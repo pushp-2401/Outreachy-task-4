@@ -1,0 +1,10 @@
+import pywikibot
+site = pywikibot.Site("wikidata", "wikidata")
+repo = site.data_repository()
+site = pywikibot.Site("wikidata", "wikidata")
+repo = site.data_repository()
+item = pywikibot.ItemPage(repo, u"Q85783283")
+claim = pywikibot.Claim(repo, u'P276')
+target = pywikibot.ItemPage(repo, u"Q2891737")
+claim.setTarget(target)
+item.addClaim(claim, summary=u'Adding claim')
